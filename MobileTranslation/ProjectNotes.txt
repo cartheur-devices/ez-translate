@@ -1,0 +1,87 @@
+December 2009
+
+This version does not include the voicing of the input text to be translated nor the translated text. Instead, a "Clear Text" button are used in place of the 
+	"Speak Input", the same for "Speak Translation".
+	
+	25.12.2009
+	Version 1.3 is functional on WM 6.5. What is left is to get the compact db finished. Problem has been the appropriate path
+		between that used when debugging and that when deployed.
+		1141: File path is correct now but the db is not being copied. I have hand-copied the db in this prototype for now as I
+			would like to get to Krypto since my time is relatively limited today. The issue seems to be:
+			
+			Do you deploy the database as part of the application? In that case, the database will be overwritten each time 
+			you start the app (Also, you always "deploy to device" from VS). Next time you deploy, uncheck the box saying 
+			"Show me this dialog everytime you run the application", and also, change the deploy options of the database to 
+			"Never copy" (or better yet, "create the database if not exists"/"use it from a fixed location always on the device", 
+			in your device app). Normally, the database will be installed in different locations based on the project build type 
+			etc...? For example, debug builds of the project install the database in some folder (bin\debug etc...) and retail 
+			builds install it in another place. In other words, please check, if the database used inside the app, is same across 
+			invocations?
+			
+		It is functional now and data can be seen by attaching SQL Server Manager to the Active Sync connection by file path:
+			MobileDevice/Program Files/eztranslate/db/SQLSessions.sdf.
+			
+	For cab buiding help see html file in 'tools' directory.
+	
+February 2010:
+	
+	A new graphical design has been applied. Think it is time to improve the desktop version for some smarts firstly.
+	
+23 March 2010-859:
+	
+It is time to groom this application for sale in the stores--Cartheur and Microsoft. I would recommend refactoring the project 
+"FindWhereShared".
+
+The help form has but some cursory text. Coordination with support tickets in the website would be good. Also, how about 
+	a site for m.cartheur.com?
+	
+I have added a license agreement into the project so that it accompanies the software.
+
+26 March 2010-1155: The display of some language pairs would be corrected if using a "Localized" version of the operating system on 
+	the mobile phone. (Goes to help guide.)
+	
+1703: The code has been cleaned as is ready for the help and user-manual.
+
+Don't forget XML documentation of the code.
+
+12 May 2010-2034: Have gotten this code working again after an extended absence--on the HTC WM6.5.
+
+13 June 2010: Version 1.8 is ready for release.
+
+12 July 2010: The export function needs to be repaired and the bug when one closes the View screeen after having minimized the application and 
+	it disappears from the phone. Needs to be tested on the phone when built to see how the error persists.
+	1801: I see this has taken over seven months to get a build out for sale. Perhaps is a good idea to focus on business and income before wasting 
+		your time with pedantic shit you must do for the shitters.
+	1808: Bug has been repaired and I think the orientation is fine enough explaining for the instance and how to reveal the full row view by clicking 
+		if the phone can be set to landscape view. Otherwise 'Export' and view in a text viewer, which I must implement lastly.
+	2019: I am testing the product for its final phases before the published build. And listening to 90s music.
+13 July 2010: In the last phase where I need to include the ability for the user to update the application (messaging would be good in a future 
+	version) but need to make sure that if the user is upgrading and not making a new install that the history (the db) is not overwritten by 
+	the installer.
+	1129: The code for the update function is quite large and intensive. However, it is necessary for all of my products. I will include the code 
+		file "LocationMonitor.cs" to include the update code although the remainder of the functions are used primarily for the LBS properties. Yes, 
+		but the file is 1000 lines long, I think I will scrap together a code file "UpdateMonitor.cs" with only that which is necessary for brevity.
+	1201: The code is in place. Now the question is: how do we use it?
+	1207: I have found the hardcoded IPs for the server. I will need to construct a UDP listener on carther.com.
+	1212: IP for catheur is 96.31.45.7 port 2669.
+	1557: However, I don't know if I can set the port value given the provider. I will test connection to port 80.
+	1604: I have set up a region in UpdateMonitor.cs for the UDP test.
+	1621: Have sent a support ticket. While waiting will organize the webshop with Paypal coding.
+	1752: Will have to spoof the update process for now. Installing VS2010 so I can work heavily with MVC.
+	1824: I think the application is ready for publishing.
+	1857: Doing some last checks, such as the IMSI number in the About Screen. If all looks good, it's ready to sign off.
+	1905: Have allowed a "N/A" to appear in the IMSI field if I cannot retrieve the IMSI with the code I have.
+	1912: Don't worry about the overwriting of the database on update since the update service is not complete.
+	1916: Cured the mixing of screens coming up from the state "Minimize".
+	1920: Added Application.Exit() to the exit event to insure the applilcation is completely disposed of. I think it's ready.
+	1924: Have disposed of French since no RTF in the textboxes in this version of WM. Okay. Last tests.
+	1928: The last thing is the icon for the application. There maybe something better than Monkey-Man but for this first release, I'll think 
+		I'll keep it. So, in the store, we'll use this particular artwork for this version.
+	1933: SIGN OFF ON VERSION 1.8.0 OF THIS APPLICATION.
+24 July 2010: Repaired some minor problems plus changed the export in a history button as a result of writing the documentation. Version is 
+	now 1.8.1 which will publish and see how the market responds.
+6 September 2010: Created a new build with a better ViewForm using scroll bars and given length but test report came back saying SQLite error when using "'". Treating 
+	it as a bug report and correcting.
+	1547: Repaired. Removing data storage of ' was the solution. 
+	1603: A descrepancy between versions in the display screen for EN to RU. Has been corrected and put to stick.
+	

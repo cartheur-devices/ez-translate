@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileTranslation", "MobileTranslation\MobileTranslation.csproj", "{64E07791-C633-40FB-96E9-340565DD4247}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "EZTranslate", "Installer\Installer.vddproj", "{59C0D4D8-D5EC-4C11-9044-F31B7822E417}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64E07791-C633-40FB-96E9-340565DD4247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E07791-C633-40FB-96E9-340565DD4247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E07791-C633-40FB-96E9-340565DD4247}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{64E07791-C633-40FB-96E9-340565DD4247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E07791-C633-40FB-96E9-340565DD4247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E07791-C633-40FB-96E9-340565DD4247}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{59C0D4D8-D5EC-4C11-9044-F31B7822E417}.Debug|Any CPU.ActiveCfg = Debug
+		{59C0D4D8-D5EC-4C11-9044-F31B7822E417}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

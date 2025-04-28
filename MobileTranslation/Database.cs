@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+
+namespace MobileTranslation
+{
+    /// <summary>
+    /// The class that contains the wrapper for a sdf database.
+    /// </summary>
+    internal class Database
+    {
+        const string ApplicationName = @"eztranslate";
+        const string DataDirectoryName = @"db";
+        const string DatabaseName = @"MobileSessions.db";
+
+        string dataPath = null;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Database"/> class.
+        /// </summary>
+        public Database()
+        {
+            //// use this only if your application will be run from a user folder like my documents.
+            //dataPath =
+            //    Path.Combine(
+            //        Path.Combine(
+            //            Path.GetDirectoryName(Application.ExecutablePath),
+            //            DataDirectoryName
+            //        ),
+            //        DatabaseName
+            //    );
+
+            
+
+            // use this this to correctly store the database in the user profile defined application data directory
+            dataPath = Path.Combine(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                        Path.Combine(ApplicationName, DataDirectoryName)
+                    ),
+                    DatabaseName
+                ); 
+        }
+    
+    }
+}
